@@ -7,8 +7,7 @@
 - [x] Researched similar repositories within the organization related to the program.     
 
 # Sprint 2:
-- [ ] make small updates and commit messages in repository
-- [ ] 6 code changes from Mona
-- [ ] 6 code changes from Angela
+- [x] make small updates and commit messages in repository
+- [ ] 6 code changes 
 
 # Sprint 3:
