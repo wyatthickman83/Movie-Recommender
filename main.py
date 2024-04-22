@@ -1,4 +1,4 @@
-#list of movies with their genre, yeaer, and age rating
+#list of movies with their genre, year, and age rating
 movies = [
     {"title": "The Shawshank Redemption", "genre": "Drama", "year": 1994, "age_rating": "R"},
     {"title": "The Godfather", "genre": "Crime", "year": 1972, "age_rating": "R"},
@@ -11,7 +11,17 @@ movies = [
     {"title": "Inception", "genre": "Sci-Fi", "year": 2010, "age_rating": "PG-13"},
     {"title": "Forrest Gump", "genre": "Drama", "year": 1994, "age_rating": "PG-13"},
     {"title": "Frozen", "genre": "Animation", "year": 2013, "age_rating": "PG"},
-    {"title": "Finding Nemo", "genre": "Animation", "year": 2003, "age_rating": "G"}
+    {"title": "Finding Nemo", "genre": "Animation", "year": 2003, "age_rating": "G"},
+    {"title": "Spirited Away", "genre": "Animation", "year": 2001, "age_rating": "PG"},
+    {"title": "Parasite", "genre": "Thriller", "year": 2019, "age_rating": "R"},
+    {"title": "Amélie", "genre": "Romance", "year": 2001, "age_rating": "R"},
+    {"title": "La La Land", "genre": "Musical", "year": 2016, "age_rating": "PG-13"},
+    {"title": "Coco", "genre": "Animation", "year": 2017, "age_rating": "PG"},
+    {"title": "Whiplash", "genre": "Drama", "year": 2014, "age_rating": "R"},
+    {"title": "Get Out", "genre": "Horror", "year": 2017, "age_rating": "R"},
+    {"title": "The Lion King", "genre": "Animation", "year": 1994, "age_rating": "G"},
+    {"title": "The Incredibles 2", "genre": "Animation", "year": 2018, "age_rating": "PG"},
+    {"title": "Kiki's Delivery Service", "genre": "Animation", "year": 1990, "age_rating": "G"},
 ]
 #asks the user questions
 def get_user_preferences():
@@ -25,21 +35,21 @@ def get_user_preferences():
     return preferred_genres, min_year, max_year, age_ratings
 
 #filters the database based on the answers
-def recommend_movies(preferred_genre, min_year, max_year, age_rating):
+def recommend_movies(preferred_genres, min_year, max_year, age_ratings):
     recommended = []
     for movie in movies:
-        if (movie['genre'] == preferred_genre and
+        if (movie['genre'] in preferred_genres and
             min_year <= movie['year'] <= max_year and
-            movie['age_rating'] == age_rating):
+            movie['age_rating'] in age_ratings):
             recommended.append(movie['title'])
     return recommended
 
 #Returns the filtered movies to the user
 def main():
-    genres, min_year, max_year, ratings = get_user_preferences()
-    recommended = recommend_movies(genres, min_year, max_year, ratings)
+    genre, min_year, max_year, rating = get_user_preferences()
+    recommended = recommend_movies(genre, min_year, max_year, rating)
     if recommended:
-        print("\nWe recommend the following movies:")
+        print("\nWe recommend watching these movies!:")
         for title in recommended:
             print(title)
     else:
