@@ -16,11 +16,13 @@ movies = [
 #asks the user questions
 def get_user_preferences():
     print("Welcome to the Movie Recommendation System!")
-    preferred_genre = input("What genre of movies do you prefer? ").capitalize()
+    preferred_genres = input("What genres of movies do you prefer? (Separate by comma, e.g., Drama, Action): ")
+    preferred_genres = [genre.strip().capitalize() for genre in preferred_genres.split(',')]
     min_year = int(input("From what year should the movies be? (e.g., 2000): "))
     max_year = int(input("Until what year should the movies be? (e.g., 2020): "))
-    age_rating = input("What age rating do you prefer? (G, PG, PG-13, R): ").upper()
-    return preferred_genre, min_year, max_year, age_rating
+    age_ratings = input("What age ratings do you prefer? (Separate by comma, e.g., G, PG, PG-13): ")
+    age_ratings = [rating.strip().upper() for rating in age_ratings.split(',')]
+    return preferred_genres, min_year, max_year, age_ratings
 
 #filters the database based on the answers
 def recommend_movies(preferred_genre, min_year, max_year, age_rating):
@@ -32,9 +34,10 @@ def recommend_movies(preferred_genre, min_year, max_year, age_rating):
             recommended.append(movie['title'])
     return recommended
 
+#Returns the filtered movies to the user
 def main():
-    genre, min_year, max_year, rating = get_user_preferences()
-    recommended = recommend_movies(genre, min_year, max_year, rating)
+    genres, min_year, max_year, ratings = get_user_preferences()
+    recommended = recommend_movies(genres, min_year, max_year, ratings)
     if recommended:
         print("\nWe recommend the following movies:")
         for title in recommended:
