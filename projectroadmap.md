@@ -8,6 +8,7 @@
 
 # Sprint 2:
 - [x] make small updates and commit messages in repository
-- [ ] 6 code changes 
+- [x] 6 code changes 
 
 # Sprint 3:
+- [ ] create slide presentation
