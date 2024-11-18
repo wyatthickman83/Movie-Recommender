@@ -8,7 +8,11 @@
 
 # Sprint 2:
 - [x] make small updates and commit messages in repository
-- [x] 6 code changes 
+- [x] 6 code changes
+- [ ] Changed process from Netflix recommender w/ facial recognition to Q&A
 
 # Sprint 3:
 - [ ] create slide presentation
+
+# Present
+- [ ] Finalize project & present
