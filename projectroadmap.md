@@ -3,12 +3,14 @@
 - [x] Awaiting approval.
 - [x] Joined KSU-IS.
 - [x] Created a repository on GitHub.
-- [x] Developed a README.md and projectroadmap.md.
 - [x] Researched similar repositories within the organization related to the program.     
 
 # Sprint 2:
-- [x] make small updates and commit messages in repository
-- [x] 6 code changes 
+- [ ] make small updates and commit messages in the repository
+- [ ] 6 code changes 
 
 # Sprint 3:
-- [ ] create slide presentation
+- [ ] Create slide presentation
+
+# Present
+- [ ] Turn in presentation
